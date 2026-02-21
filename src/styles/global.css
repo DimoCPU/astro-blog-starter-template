@@ -196,4 +196,9 @@ hr {
     font-size: 16px;
     padding: 10px 18px;
   }
+	/* Center the dashboard title */
+main > h1 {
+  text-align: center;
+  margin-bottom: 40px; /* optional spacing above buttons */
+}
 }
