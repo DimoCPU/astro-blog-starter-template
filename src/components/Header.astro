@@ -4,52 +4,85 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Media</HeaderLink>
-		</div>
+  <nav>
+    <h2><a href="/">{SITE_TITLE}</a></h2>
 
-	</nav>
+    <!-- Media button centered -->
+    <div class="internal-links">
+      <HeaderLink href="/">Media</HeaderLink>
+    </div>
+  </nav>
 </header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
+<style>
+/* Header background and shadow */
+header {
+  margin: 0;
+  padding: 0 1em;
+  background: white;
+  box-shadow: 0 2px 8px rgba(var(--black), 5%);
+  position: relative; /* needed for centering internal-links */
+}
+
+/* Site title */
+h2 {
+  margin: 0;
+  font-size: 1em;
+}
+
+h2 a,
+h2 a.active {
+  text-decoration: none;
+  color: var(--black);
+}
+
+/* Nav layout */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* title on the left */
+  height: 60px;
+  position: relative; /* relative positioning for absolute centering */
+}
+
+/* Center the internal-links */
+.internal-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Links inside nav */
+nav a {
+  padding: 1em 0.5em;
+  color: var(--black);
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+}
+
+nav a.active {
+  border-bottom-color: var(--accent);
+}
+
+/* Hide social links on mobile (if present) */
+.social-links,
+.social-links a {
+  display: flex;
+}
+
+@media (max-width: 720px) {
+  .social-links {
+    display: none;
+  }
+  .internal-links {
+    position: static;
+    transform: none;
+    margin-top: 0.5em;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+}
 </style>
