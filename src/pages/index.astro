@@ -9,66 +9,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #0d0d0d;
-        color: #ffffff;
-      }
-
-      main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 60px 20px;
-      }
-
-      h1 {
-        color: #00bfff;
-        margin-bottom: 50px;
-        font-size: 2.5em;
-      }
-
-      .dashboard {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-      }
-
-      .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 180px;
-        height: 60px;
-        padding: 12px;
-        font-size: 18px;
-        color: white;
-        background-color: #007ACC;
-        text-decoration: none;
-        border-radius: 12px;
-        transition: 0.3s;
-      }
-
-      .btn:hover {
-        background-color: #005A99;
-      }
-
-      .btn img {
-        width: 28px;
-        height: 28px;
-        margin-right: 10px;
-      }
-
-      @media (max-width: 500px) {
-        .btn {
-          width: 140px;
-          font-size: 16px;
-        }
-      }
-    </style>
   </head>
   <body>
     <Header />
