@@ -7,18 +7,45 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>			
-				<h1>Skynet17 Media Dashboard</h1>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .btn {
+        display: inline-block;
+        margin: 12px;
+        padding: 14px 28px;
+        font-size: 18px;
+        text-decoration: none;
+        background-color: #007ACC;
+        color: white;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
 
-            <a class="btn" href="https://radarr.skynet17.com" target="_blank">Radarr</a>
-         <a href="https://sonarr.skynet17.com/" target="_blank">Sonarr</a>
-         <a class="btn" href="https://tautulli.skynet17.com" target="_blank">Tautulli</a>
-		</main>
-		<Footer />
-	</body>
+      .btn:hover {
+        background-color: #005A99;
+      }
+
+      main {
+        text-align: center;
+        margin-top: 60px;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        color: #00bfff;
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Skynet17 Media Dashboard</h1>
+      <a class="btn" href="https://radarr.skynet17.com" target="_blank">Radarr</a>
+      <a class="btn" href="https://sonarr.skynet17.com/" target="_blank">Sonarr</a>
+      <a class="btn" href="https://tautulli.skynet17.com" target="_blank">Tautulli</a>
+    </main>
+    <Footer />
+  </body>
 </html>
