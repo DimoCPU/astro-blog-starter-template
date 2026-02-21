@@ -202,3 +202,11 @@ main > h1 {
   margin-bottom: 40px; /* optional spacing above buttons */
 }
 }
+/* Center everything in the dashboard wrapper */
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers all child elements horizontally */
+  text-align: center;  /* ensures h1 text is centered */
+  margin-top: 20px;    /* optional spacing from header */
+}
