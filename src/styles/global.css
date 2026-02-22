@@ -1,5 +1,5 @@
 /* =========================
-   Bear Blog base CSS
+   Bear Blog base CSS + Dark Mode
    ========================= */
 
 :root {
@@ -36,11 +36,8 @@ body {
   margin: 0;
   padding: 0;
   text-align: left;
-  background: linear-gradient(var(--gray-gradient)) no-repeat;
-  background-size: 100% 600px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  color: rgb(var(--gray-dark));
+  background-color: #121212;  /* dark mode background */
+  color: #e0e0e0;             /* light text */
   font-size: 20px;
   line-height: 1.7;
 }
@@ -50,6 +47,7 @@ main {
   max-width: calc(100% - 2em);
   margin: auto;
   padding: 3em 1em;
+  background: transparent;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -66,8 +64,14 @@ h5 { font-size: 1.25em; }
 
 strong, b { font-weight: 700; }
 
-a { color: var(--accent); }
-a:hover { color: var(--accent); }
+a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #63b3ed;
+}
 
 p { margin-bottom: 1em; }
 .prose p { margin-bottom: 2em; }
@@ -80,25 +84,28 @@ img { max-width: 100%; height: auto; border-radius: 8px; }
 
 code {
   padding: 2px 5px;
-  background-color: rgb(var(--gray-light));
+  background-color: #1e1e1e;
   border-radius: 2px;
+  color: #e0e0e0;
 }
 
 pre {
   padding: 1.5em;
   border-radius: 8px;
+  background-color: #1e1e1e;
 }
 
 pre > code { all: unset; }
 
 blockquote {
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid #bb86fc;
   padding: 0 0 0 20px;
   margin: 0px;
   font-size: 1.333em;
+  color: #e0e0e0;
 }
 
-hr { border: none; border-top: 1px solid rgb(var(--gray-light)); }
+hr { border: none; border-top: 1px solid #333; }
 
 @media (max-width: 720px) {
   body { font-size: 18px; }
@@ -112,7 +119,7 @@ hr { border: none; border-top: 1px solid rgb(var(--gray-light)); }
 .dashboard-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center; /* center title & buttons */
+  align-items: center;
   text-align: center;
   margin-top: 20px;
 }
@@ -134,27 +141,30 @@ hr { border: none; border-top: 1px solid rgb(var(--gray-light)); }
   color: white;
   text-decoration: none;
   border-radius: 12px;
-  transition: 0.3s;
+  transition: 0.3s, box-shadow 0.3s ease-in-out;
   flex: 0 0 auto;
 }
 
-/* Hover effect */
-.btn:hover { filter: brightness(85%); }
+/* Enhanced hover: glow + brightness */
+.btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
 
-/* Icon sizing */
 .btn img {
   width: 28px;
   height: 28px;
   margin-right: 10px;
 }
 
-/* Optional: color-coded buttons */
+/* Color-coded buttons */
 .btn.radarr { background-color: #e04e39; }
 .btn.sonarr { background-color: #7bc143; }
 .btn.plex { background-color: #e5a00d; }
 .btn.tautulli { background-color: #1e90ff; }
-.btn.seerr { background-color: #de34eb; }
+.btn.seerr { background-color: #9b59b6; } /* purple variant */
 
+/* Responsive buttons */
 @media (max-width: 500px) {
   .btn {
     width: 140px;
