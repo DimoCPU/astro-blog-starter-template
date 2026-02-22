@@ -153,7 +153,7 @@ hr { border: none; border-top: 1px solid rgb(var(--gray-light)); }
 .btn.sonarr { background-color: #7bc143; }
 .btn.plex { background-color: #e5a00d; }
 .btn.tautulli { background-color: #1e90ff; }
-.btn.seerr { background-color: #c034eb; }
+.btn.seerr { background-color: #de34eb; }
 
 @media (max-width: 500px) {
   .btn {
